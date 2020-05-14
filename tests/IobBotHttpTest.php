@@ -6,17 +6,19 @@
  * @LastEditTime: 2020-05-14 16:38:49
  * @Description:
  */
+
 namespace Diaolingzc\IotbotPhp\Tests;
 
 use Diaolingzc\IotbotPhp\IotbotHttp;
 use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
 
-
 class IobBotHttpTest extends TestCase
 {
     public $url;
+
     public $robotQQ;
+
     public function testSendMsg()
     {
         $iot = new IotBotHttp($this->url, $this->robotQQ);

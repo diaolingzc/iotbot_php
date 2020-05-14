@@ -6,6 +6,7 @@
  * @LastEditTime: 2020-05-14 12:06:37
  * @Description:
  */
+
 namespace Diaolingzc\IotbotPhp\Exceptions;
 
 class HttpException extends Exception
