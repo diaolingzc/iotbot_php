@@ -6,6 +6,7 @@
  * @LastEditTime: 2020-05-14 16:47:18
  * @Description:
  */
+
 namespace Diaolingzc\IotbotPhp;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
