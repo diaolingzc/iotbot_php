@@ -59,20 +59,20 @@ class IotBotHttp
         $data->content = (string) $content;
         $data->groupid = (int) $groupId;
         $data->atUser = (int) $atUser;
-        if ($voiceUrl) {
+        if ($voiceUrl || $voiceBase64Buf) {
             $data->voiceUrl = (string) $voiceUrl;
         }
-        if ($voiceBase64Buf) {
-            $data->voiceUrl = (string) $voiceBase64Buf;
+        if ($voiceUrl || $voiceBase64Buf) {
+            $data->voiceBase64Buf = (string) $voiceBase64Buf;
         }
-        if ($picUrl) {
-            $data->voiceUrl = (string) $picUrl;
+        if ($picUrl || $picBase64Buf || $fileMd5) {
+            $data->picUrl = (string) $picUrl;
         }
-        if ($picBase64Buf) {
-            $data->voiceUrl = (string) $picBase64Buf;
+        if ($picUrl || $picBase64Buf || $fileMd5) {
+            $data->picBase64Buf = (string) $picBase64Buf;
         }
-        if ($fileMd5) {
-            $data->voiceUrl = (string) $fileMd5;
+        if ($picUrl || $picBase64Buf || $fileMd5) {
+            $data->fileMd5 = (string) $fileMd5;
         }
         if ($replayInfo) {
             $data->voiceUrl = (string) $replayInfo;
