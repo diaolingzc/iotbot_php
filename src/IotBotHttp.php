@@ -59,12 +59,24 @@ class IotBotHttp
         $data->content = (string) $content;
         $data->groupid = (int) $groupId;
         $data->atUser = (int) $atUser;
-        if ($voiceUrl) $data->voiceUrl = (string) $voiceUrl;
-        if ($voiceBase64Buf) $data->voiceUrl = (string) $voiceBase64Buf;
-        if ($picUrl) $data->voiceUrl = (string) $picUrl;
-        if ($picBase64Buf) $data->voiceUrl = (string) $picBase64Buf;
-        if ($fileMd5) $data->voiceUrl = (string) $fileMd5;
-        if ($replayInfo) $data->voiceUrl = (string) $replayInfo;
+        if ($voiceUrl) {
+            $data->voiceUrl = (string) $voiceUrl;
+        }
+        if ($voiceBase64Buf) {
+            $data->voiceUrl = (string) $voiceBase64Buf;
+        }
+        if ($picUrl) {
+            $data->voiceUrl = (string) $picUrl;
+        }
+        if ($picBase64Buf) {
+            $data->voiceUrl = (string) $picBase64Buf;
+        }
+        if ($fileMd5) {
+            $data->voiceUrl = (string) $fileMd5;
+        }
+        if ($replayInfo) {
+            $data->voiceUrl = (string) $replayInfo;
+        }
 
         try {
             $response = $this->getHttpClient()->request('POST', $this->webApiBaseUrl, [
@@ -86,16 +98,16 @@ class IotBotHttp
 
     public function sendTextMsg(int $toUser, int $sendToType = 1, string $content = '', int $groupId = 0, int $atUser = 0)
     {
-      return $this->send($toUser, $sendToType, 'TextMsg', $content, $groupId, $atUser);
+        return $this->send($toUser, $sendToType, 'TextMsg', $content, $groupId, $atUser);
     }
 
     public function sendPicMsg(int $toUser, int $sendToType = 1, string $content = '', int $groupId = 0, int $atUser = 0, string $picUrl = '', string $picBase64Buf = '', string $fileMd5 = '')
     {
-      return $this->send($toUser, $sendToType, 'PicMsg', $content, $groupId, $atUser, '', '', $picUrl, $picBase64Buf, $fileMd5);
+        return $this->send($toUser, $sendToType, 'PicMsg', $content, $groupId, $atUser, '', '', $picUrl, $picBase64Buf, $fileMd5);
     }
 
     public function sendVoiceMsg(int $toUser, int $sendToType = 1, string $content = '', int $groupId = 0, int $atUser = 0, string $voiceUrl = '', string $voiceBase64Buf = '')
     {
-      return $this->send($toUser, $sendToType, 'VoiceMsg', $content, $groupId, $atUser, $voiceUrl, $voiceBase64Buf);
+        return $this->send($toUser, $sendToType, 'VoiceMsg', $content, $groupId, $atUser, $voiceUrl, $voiceBase64Buf);
     }
 }
