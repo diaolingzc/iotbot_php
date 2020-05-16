@@ -15,15 +15,15 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(IotbotHttp::class, function () {
-            return new IotbotHttp(config('services.iotBot.webApiBaseUrl'), config('services.iotBot.robotQQ'));
+        $this->app->singleton(IotBotHttp::class, function () {
+            return new IotBotHttp(config('services.iotBot.webApiBaseUrl'), config('services.iotBot.robotQQ'));
         });
 
-        $this->app->alias(IotbotHttp::class, 'iotbot');
+        $this->app->alias(IotBotHttp::class, 'iotbot');
     }
 
     public function provides()
     {
-        return [IotbotHttp::class, 'iotbot'];
+        return [IotBotHttp::class, 'iotbot'];
     }
 }
