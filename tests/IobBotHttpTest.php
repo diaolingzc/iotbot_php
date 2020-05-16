@@ -23,7 +23,15 @@ class IobBotHttpTest extends TestCase
     {
         $iot = new IotBotHttp($this->url, $this->robotQQ);
 
-        $response = $iot->sendMsg(123456789, 1, 'TextMsg', 'Test');
+        $response = $iot->sendTextMsg(12345678, 1, '1');
+        $this->assertEquals(0, $response['Ret']);
+    }
+
+    public function testRevokeMsg()
+    {
+        $iot = new IotBotHttp($this->url, $this->robotQQ);
+
+        $response = $iot->RevokeMsg(12345678, 1, 1);
         $this->assertEquals(0, $response['Ret']);
     }
 
